@@ -1,0 +1,42 @@
+<div id="slideOuterContainer">
+    <div id="slideControllerContainer">
+        <div class="left">
+            <div id="buttonArea"></div>
+        </div>
+        <div class="right">
+            <div id="graphIcon">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <div id="tapToggleBtn" class="slider round"></div>
+            </label>
+            <div id="tableIcon" class="selected">
+                <i class="fa fa-table" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div id="slideContainer">
+        <div id="tableContainer" class="slideBackground">
+            <table class="dataTable">
+              <thead>
+               <th><h1>Date</h1></th>
+               <th><h1>Failures</h1></th>
+               <th><h1>Successes</h1></th>
+               <th><h1>Sent</h1></th>
+              </thead>
+              <tbody>
+                <% @message_stats.each do |stat| %>
+                <tr>
+                  <td><%=stat[:created_at]%></td>
+                  <td><%=stat[:failures]%></td>
+                  <td><%=stat[:successful]%></td>
+                  <td><%=stat[:sent]%></td>
+                </tr>
+                <%end%>
+              </tbody>
+            </table>
+        </div>
+        <div id="graphContainer" class="slideBackground"></div>
+    </div>
+</div>

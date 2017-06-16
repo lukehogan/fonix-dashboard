@@ -1,0 +1,278 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html, body{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+html{
+    background-color: #f6f6f6;
+    color: #222;
+    font-family: Arial;
+}
+
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+*:focus {outline:0;}
+
+h1 {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+#tableContainer{
+    display:block;
+}
+
+#graphContainer{
+    display:none;
+}
+
+#graphTabButtons{
+    display:none;
+}
+
+#slideOuterContainer{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#slideControllerContainer{
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+#slideControllerContainer .left{
+    float: left;
+}
+
+#slideControllerContainer .right{
+    float: right;
+    overflow: hidden;
+}
+
+#buttonArea{
+    display: none;
+}
+
+#graphTabButtons li{
+    float: left;
+    margin-right: 5px;
+}
+
+#slideContainer{
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.slideBackground{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.dataTable{
+    width: 100%;
+    border-spacing: 0px;
+    border: solid 1px #4a4a4a;
+}
+
+.dataTable th{
+    width: 25%;
+    background-color: #052460;
+    border: solid 1px #052460;
+}
+
+.dataTable td{
+    text-align: center;
+    font-size:14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px #4a4a4a;
+    color: #052460;
+}
+
+#tableIcon{
+    display: block;
+    float:right;
+    color:#6e6e6e;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#tableIcon.selected{
+    color: #052460;
+}
+
+#graphIcon{
+    display: block;
+    float:right;
+    color: #d8d8d8;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#graphIcon.selected{
+    color: #052460;
+}
+
+
+/* Graph Styles */
+
+.axis path,
+.axis line{
+    stroke: black;
+    color: #ccc;
+}
+
+.line{
+    stroke: lightgrey;
+    stroke-width: 2px;
+}
+
+.tick text{
+    font-size: 12px;
+}
+
+.tick line{
+    opacity: 0.7;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.domain{
+    opacity:0;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.area {
+    fill: lightsteelblue;
+    stroke-width: 0;
+}
+
+.appButton{
+    height: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12px;
+    line-height: 22px;
+    background-color: #ededed;
+    color: #052460;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #bbb;
+}
+
+.appButton:hover{
+    background-color: #cecece;
+    color: #fff;
+}
+
+.appButton.selected{
+    background-color: #052460;
+    color: #fff;
+}
+
+/* Slider Styles */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    float:right;
+    display: block;
+    width: 60px;
+    height: 26px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 6px;
+    bottom: 2px;
+    background-color: #052460;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ccc;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #ccc;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 26px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
